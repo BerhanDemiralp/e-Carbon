@@ -1,0 +1,46 @@
+# .NET Core
+bin/
+obj/
+*.user
+*.suo
+
+# Visual Studio
+.vs/
+*.sln.docstates
+
+# Rider
+.idea/
+
+# VS Code
+.vscode/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Environment
+.env
+.env.local
+
+# Database
+*.db
+*.db-journal
+
+# Reports (PDFs)
+reports/
+*.pdf
+
+# NuGet
+*.nupkg
+
+# Test Results
+TestResults/
+coverage/
+
+# Temporary files
+*.tmp
+*.temp
