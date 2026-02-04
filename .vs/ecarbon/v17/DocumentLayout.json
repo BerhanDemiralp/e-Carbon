@@ -1,0 +1,79 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Berhan\\Desktop\\e-Carbon\\ecarbon\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F665099C-1B56-42B4-B966-AFF884E6CFC8}|src\\eCarbon.Api\\eCarbon.Api.csproj|c:\\users\\berhan\\desktop\\e-carbon\\ecarbon\\src\\ecarbon.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F665099C-1B56-42B4-B966-AFF884E6CFC8}|src\\eCarbon.Api\\eCarbon.Api.csproj|solutionrelative:src\\ecarbon.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F665099C-1B56-42B4-B966-AFF884E6CFC8}|src\\eCarbon.Api\\eCarbon.Api.csproj|c:\\users\\berhan\\desktop\\e-carbon\\ecarbon\\src\\ecarbon.api\\domain\\entities\\auditlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F665099C-1B56-42B4-B966-AFF884E6CFC8}|src\\eCarbon.Api\\eCarbon.Api.csproj|solutionrelative:src\\ecarbon.api\\domain\\entities\\auditlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F665099C-1B56-42B4-B966-AFF884E6CFC8}|src\\eCarbon.Api\\eCarbon.Api.csproj|c:\\users\\berhan\\desktop\\e-carbon\\ecarbon\\src\\ecarbon.api\\domain\\entities\\activityrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F665099C-1B56-42B4-B966-AFF884E6CFC8}|src\\eCarbon.Api\\eCarbon.Api.csproj|solutionrelative:src\\ecarbon.api\\domain\\entities\\activityrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Berhan\\Desktop\\e-Carbon\\ecarbon\\src\\eCarbon.Api\\Program.cs",
+              "RelativeDocumentMoniker": "src\\eCarbon.Api\\Program.cs",
+              "ToolTip": "C:\\Users\\Berhan\\Desktop\\e-Carbon\\ecarbon\\src\\eCarbon.Api\\Program.cs",
+              "RelativeToolTip": "src\\eCarbon.Api\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T22:44:57.64Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AuditLog.cs",
+              "DocumentMoniker": "C:\\Users\\Berhan\\Desktop\\e-Carbon\\ecarbon\\src\\eCarbon.Api\\Domain\\Entities\\AuditLog.cs",
+              "RelativeDocumentMoniker": "src\\eCarbon.Api\\Domain\\Entities\\AuditLog.cs",
+              "ToolTip": "C:\\Users\\Berhan\\Desktop\\e-Carbon\\ecarbon\\src\\eCarbon.Api\\Domain\\Entities\\AuditLog.cs",
+              "RelativeToolTip": "src\\eCarbon.Api\\Domain\\Entities\\AuditLog.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T22:44:53.044Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ActivityRecord.cs",
+              "DocumentMoniker": "C:\\Users\\Berhan\\Desktop\\e-Carbon\\ecarbon\\src\\eCarbon.Api\\Domain\\Entities\\ActivityRecord.cs",
+              "RelativeDocumentMoniker": "src\\eCarbon.Api\\Domain\\Entities\\ActivityRecord.cs",
+              "ToolTip": "C:\\Users\\Berhan\\Desktop\\e-Carbon\\ecarbon\\src\\eCarbon.Api\\Domain\\Entities\\ActivityRecord.cs",
+              "RelativeToolTip": "src\\eCarbon.Api\\Domain\\Entities\\ActivityRecord.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T22:44:51.784Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
