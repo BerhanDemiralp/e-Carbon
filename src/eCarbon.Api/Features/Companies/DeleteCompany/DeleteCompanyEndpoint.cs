@@ -15,9 +15,7 @@ public static class DeleteCompanyEndpoint
             var result = await mediator.Send(command, ct);
             return Results.Ok(result);
         })
-        .WithName("DeleteCompany")
-        .Produces<DeleteCompanyResponse>(StatusCodes.Status200OK)
-        .Produces(StatusCodes.Status404NotFound);
+        .WithName("DeleteCompany");
 
         return app;
     }

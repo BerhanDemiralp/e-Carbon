@@ -24,7 +24,7 @@ public class DeleteCompanyHandler : IRequestHandler<DeleteCompanyCommand, Delete
             throw new NotFoundException("Company", request.Id);
         }
 
-        // Soft delete - IsDeleted flag'ini true yap
+        // Soft delete - Set IsDeleted flag to true
         company.IsDeleted = true;
         company.UpdatedAt = DateTime.UtcNow;
 
@@ -32,6 +32,6 @@ public class DeleteCompanyHandler : IRequestHandler<DeleteCompanyCommand, Delete
 
         return new DeleteCompanyResponse(
             company.Id,
-            "Şirket başarıyla silindi (soft delete)");
+            "Company successfully deleted (soft delete)");
     }
 }

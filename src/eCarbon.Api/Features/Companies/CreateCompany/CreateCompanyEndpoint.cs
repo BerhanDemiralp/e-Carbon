@@ -1,4 +1,5 @@
 using MediatR;
+using Microsoft.AspNetCore.Mvc;
 
 namespace eCarbon.Api.Features.Companies.CreateCompany;
 
@@ -7,7 +8,7 @@ public static class CreateCompanyEndpoint
     public static IEndpointRouteBuilder MapCreateCompany(this IEndpointRouteBuilder app)
     {
         app.MapPost("/api/companies", async (
-            CreateCompanyRequest request,
+            [FromBody] CreateCompanyRequest request,
             IMediator mediator,
             CancellationToken ct) =>
         {
@@ -15,7 +16,8 @@ public static class CreateCompanyEndpoint
             var result = await mediator.Send(command, ct);
             return Results.Created($"/api/companies/{result.Id}", result);
         })
-        .WithName("CreateCompany");
+        .WithName("CreateCompany")
+        .Accepts<CreateCompanyRequest>("application/json");
 
         return app;
     }

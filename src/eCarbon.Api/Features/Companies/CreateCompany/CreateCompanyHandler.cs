@@ -15,8 +15,8 @@ public class CreateCompanyHandler : IRequestHandler<CreateCompanyCommand, Create
 
     public async Task<CreateCompanyResponse> Handle(CreateCompanyCommand request, CancellationToken cancellationToken)
     {
-        // Validasyon zaten ValidationBehavior tarafından yapıldı!
-        // Burada sadece iş mantığı var
+        // Validation is already done by ValidationBehavior!
+        // Here is only the business logic
         
         var company = new Company
         {

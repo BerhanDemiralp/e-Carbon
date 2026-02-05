@@ -8,19 +8,19 @@ public class CreateCompanyValidator : AbstractValidator<CreateCompanyCommand>
     {
         RuleFor(x => x.Name)
             .NotEmpty()
-            .WithMessage("Şirket adı zorunludur");
+            .WithMessage("Company name is required");
         
         RuleFor(x => x.Name)
             .MinimumLength(3)
-            .WithMessage("Şirket adı en az 3 karakter olmalıdır");
+            .WithMessage("Company name must be at least 3 characters");
         
         RuleFor(x => x.Name)
             .MaximumLength(200)
-            .WithMessage("Şirket adı en fazla 200 karakter olabilir");
+            .WithMessage("Company name cannot exceed 200 characters");
         
         RuleFor(x => x.Name)
             .Must(BeValidCompanyName)
-            .WithMessage("Şirket adı özel karakterler içeremez");
+            .WithMessage("Company name cannot contain special characters");
     }
     
     private bool BeValidCompanyName(string name)
@@ -28,7 +28,7 @@ public class CreateCompanyValidator : AbstractValidator<CreateCompanyCommand>
         if (string.IsNullOrEmpty(name))
             return true;
             
-        // Sadece harf, rakam, boşluk ve bazı özel karakterlere izin ver
+        // Allow only letters, numbers, spaces and some special characters
         var invalidChars = new[] { '<', '>', '&', '"', '\'' };
         return !invalidChars.Any(c => name.Contains(c));
     }

@@ -16,9 +16,7 @@ public static class UpdateCompanyEndpoint
             var result = await mediator.Send(command, ct);
             return Results.Ok(result);
         })
-        .WithName("UpdateCompany")
-        .Produces<UpdateCompanyResponse>(StatusCodes.Status200OK)
-        .Produces(StatusCodes.Status404NotFound);
+        .WithName("UpdateCompany");
 
         return app;
     }

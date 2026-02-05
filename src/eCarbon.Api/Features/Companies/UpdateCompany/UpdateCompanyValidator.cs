@@ -8,18 +8,18 @@ public class UpdateCompanyValidator : AbstractValidator<UpdateCompanyCommand>
     {
         RuleFor(x => x.Id)
             .NotEmpty()
-            .WithMessage("Şirket ID'si zorunludur");
+            .WithMessage("Company ID is required");
         
         RuleFor(x => x.Name)
             .NotEmpty()
-            .WithMessage("Şirket adı zorunludur");
+            .WithMessage("Company name is required");
         
         RuleFor(x => x.Name)
             .MinimumLength(3)
-            .WithMessage("Şirket adı en az 3 karakter olmalıdır");
+            .WithMessage("Company name must be at least 3 characters");
         
         RuleFor(x => x.Name)
             .MaximumLength(200)
-            .WithMessage("Şirket adı en fazla 200 karakter olabilir");
+            .WithMessage("Company name cannot exceed 200 characters");
     }
 }

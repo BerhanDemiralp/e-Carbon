@@ -14,8 +14,7 @@ public static class ListCompaniesEndpoint
             var result = await mediator.Send(query, ct);
             return Results.Ok(result);
         })
-        .WithName("ListCompanies")
-        .Produces<List<ListCompaniesResponse>>(StatusCodes.Status200OK);
+        .WithName("ListCompanies");
 
         return app;
     }
