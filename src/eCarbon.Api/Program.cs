@@ -2,6 +2,10 @@ using eCarbon.Api.Common.Behaviors;
 using eCarbon.Api.Common.Middleware;
 using eCarbon.Api.Common.Persistence;
 using eCarbon.Api.Features.Companies.CreateCompany;
+using eCarbon.Api.Features.Companies.GetCompany;
+using eCarbon.Api.Features.Companies.ListCompanies;
+using eCarbon.Api.Features.Companies.UpdateCompany;
+using eCarbon.Api.Features.Companies.DeleteCompany;
 using FluentValidation;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -66,6 +70,10 @@ using (var scope = app.Services.CreateScope())
 
 // Map endpoints
 app.MapCreateCompany();
+app.MapGetCompany();
+app.MapListCompanies();
+app.MapUpdateCompany();
+app.MapDeleteCompany();
 
 app.MapGet("/", () => Results.Ok(new { message = "eCarbon API is running", version = "1.0" }));
 
