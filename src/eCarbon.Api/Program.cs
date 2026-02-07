@@ -17,6 +17,7 @@ using eCarbon.Api.Features.ActivityRecords.ListActivityRecordsByFacility;
 using eCarbon.Api.Features.ActivityRecords.ListAllActivityRecords;
 using eCarbon.Api.Features.ActivityRecords.UpdateActivityRecord;
 using eCarbon.Api.Features.ActivityRecords.DeleteActivityRecord;
+using eCarbon.Api.Features.Calculations.PreviewMonthlyEmissions;
 using FluentValidation;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -102,6 +103,9 @@ app.MapListActivityRecordsByFacility();
 app.MapListAllActivityRecords();
 app.MapUpdateActivityRecord();
 app.MapDeleteActivityRecord();
+
+// Map Calculations endpoints
+app.MapPreviewMonthlyEmissions();
 
 app.MapGet("/", () => Results.Ok(new { message = "eCarbon API is running", version = "1.0" }));
 
