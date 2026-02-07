@@ -43,6 +43,18 @@ public class ErrorHandlingMiddleware
                 code = HttpStatusCode.NotFound;
                 result = JsonSerializer.Serialize(new { error = exception.Message });
                 break;
+            case EmissionFactorNotFoundException _:
+                code = HttpStatusCode.BadRequest;
+                result = JsonSerializer.Serialize(new { error = exception.Message });
+                break;
+            case ArgumentException _:
+                code = HttpStatusCode.BadRequest;
+                result = JsonSerializer.Serialize(new { error = exception.Message });
+                break;
+            case UnauthorizedAccessException _:
+                code = HttpStatusCode.Unauthorized;
+                result = JsonSerializer.Serialize(new { error = "Unauthorized access" });
+                break;
             default:
                 result = JsonSerializer.Serialize(new { error = "An unexpected error occurred." });
                 break;

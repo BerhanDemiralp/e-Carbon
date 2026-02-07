@@ -1,6 +1,7 @@
 using eCarbon.Api.Common.Behaviors;
 using eCarbon.Api.Common.Middleware;
 using eCarbon.Api.Common.Persistence;
+using eCarbon.Api.Common.Persistence.Seeding;
 using eCarbon.Api.Features.Companies.CreateCompany;
 using eCarbon.Api.Features.Companies.GetCompany;
 using eCarbon.Api.Features.Companies.ListCompanies;
@@ -11,6 +12,11 @@ using eCarbon.Api.Features.Facilities.GetFacility;
 using eCarbon.Api.Features.Facilities.ListFacilitiesByCompany;
 using eCarbon.Api.Features.Facilities.ListAllFacilities;
 using eCarbon.Api.Features.Facilities.UpdateFacility;
+using eCarbon.Api.Features.ActivityRecords.CreateActivityRecord;
+using eCarbon.Api.Features.ActivityRecords.ListActivityRecordsByFacility;
+using eCarbon.Api.Features.ActivityRecords.ListAllActivityRecords;
+using eCarbon.Api.Features.ActivityRecords.UpdateActivityRecord;
+using eCarbon.Api.Features.ActivityRecords.DeleteActivityRecord;
 using FluentValidation;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -71,6 +77,9 @@ using (var scope = app.Services.CreateScope())
 {
     var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
     dbContext.Database.Migrate();
+    
+    // Seed emission factors
+    await EmissionFactorsSeeder.SeedAsync(dbContext);
 }
 
 // Map Company endpoints
@@ -86,6 +95,13 @@ app.MapGetFacility();
 app.MapListAllFacilities();
 app.MapListFacilitiesByCompany();
 app.MapUpdateFacility();
+
+// Map Activity Record endpoints
+app.MapCreateActivityRecord();
+app.MapListActivityRecordsByFacility();
+app.MapListAllActivityRecords();
+app.MapUpdateActivityRecord();
+app.MapDeleteActivityRecord();
 
 app.MapGet("/", () => Results.Ok(new { message = "eCarbon API is running", version = "1.0" }));
 
