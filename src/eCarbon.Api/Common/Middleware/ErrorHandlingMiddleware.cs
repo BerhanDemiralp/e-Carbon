@@ -47,6 +47,10 @@ public class ErrorHandlingMiddleware
                 code = HttpStatusCode.BadRequest;
                 result = JsonSerializer.Serialize(new { error = exception.Message });
                 break;
+            case InvalidOperationException _:
+                code = HttpStatusCode.BadRequest;
+                result = JsonSerializer.Serialize(new { error = exception.Message });
+                break;
             case ArgumentException _:
                 code = HttpStatusCode.BadRequest;
                 result = JsonSerializer.Serialize(new { error = exception.Message });

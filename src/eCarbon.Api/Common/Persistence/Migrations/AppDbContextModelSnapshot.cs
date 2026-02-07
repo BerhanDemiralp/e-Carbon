@@ -362,6 +362,9 @@ namespace eCarbon.Api.Common.Persistence.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("FacilityId")
+                        .HasDatabaseName("IX_snapshot_items_facility_id");
+
                     b.HasIndex("SnapshotId")
                         .HasDatabaseName("IX_snapshot_items_snapshot_id");
 
@@ -414,11 +417,19 @@ namespace eCarbon.Api.Common.Persistence.Migrations
 
             modelBuilder.Entity("eCarbon.Api.Domain.Entities.SnapshotItem", b =>
                 {
+                    b.HasOne("eCarbon.Api.Domain.Entities.Facility", "Facility")
+                        .WithMany()
+                        .HasForeignKey("FacilityId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("eCarbon.Api.Domain.Entities.MonthlySnapshot", "Snapshot")
                         .WithMany("SnapshotItems")
                         .HasForeignKey("SnapshotId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Facility");
 
                     b.Navigation("Snapshot");
                 });

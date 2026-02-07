@@ -19,4 +19,5 @@ public class SnapshotItem
     
     // Navigation properties
     public MonthlySnapshot Snapshot { get; set; } = null!;
+    public Facility Facility { get; set; } = null!;
 }

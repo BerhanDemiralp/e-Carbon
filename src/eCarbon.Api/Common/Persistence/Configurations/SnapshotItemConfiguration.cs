@@ -49,7 +49,15 @@ public class SnapshotItemConfiguration : IEntityTypeConfiguration<SnapshotItem>
             .HasForeignKey(x => x.SnapshotId)
             .OnDelete(DeleteBehavior.Cascade);
         
+        builder.HasOne(x => x.Facility)
+            .WithMany()
+            .HasForeignKey(x => x.FacilityId)
+            .OnDelete(DeleteBehavior.Restrict);
+        
         builder.HasIndex(x => x.SnapshotId)
             .HasDatabaseName("IX_snapshot_items_snapshot_id");
+        
+        builder.HasIndex(x => x.FacilityId)
+            .HasDatabaseName("IX_snapshot_items_facility_id");
     }
 }
