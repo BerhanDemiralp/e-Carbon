@@ -18,6 +18,7 @@ public static class CreateFacilityEndpoint
             return Results.Created($"/api/facilities/{result.Id}", result);
         })
         .WithName("CreateFacility")
+        .WithTags("Facilities")
         .Accepts<CreateFacilityRequest>("application/json");
 
         return app;

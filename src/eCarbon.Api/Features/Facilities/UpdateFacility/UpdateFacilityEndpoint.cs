@@ -18,6 +18,7 @@ public static class UpdateFacilityEndpoint
             return Results.Ok(result);
         })
         .WithName("UpdateFacility")
+        .WithTags("Facilities")
         .Accepts<UpdateFacilityRequest>("application/json");
 
         return app;

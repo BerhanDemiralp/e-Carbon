@@ -17,6 +17,7 @@ public static class CreateCompanyEndpoint
             return Results.Created($"/api/companies/{result.Id}", result);
         })
         .WithName("CreateCompany")
+        .WithTags("Companies")
         .Accepts<CreateCompanyRequest>("application/json");
 
         return app;

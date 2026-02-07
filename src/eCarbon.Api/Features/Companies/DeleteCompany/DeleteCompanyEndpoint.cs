@@ -15,7 +15,8 @@ public static class DeleteCompanyEndpoint
             var result = await mediator.Send(command, ct);
             return Results.Ok(result);
         })
-        .WithName("DeleteCompany");
+        .WithName("DeleteCompany")
+        .WithTags("Companies");
 
         return app;
     }

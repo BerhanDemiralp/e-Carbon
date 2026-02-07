@@ -9,6 +9,7 @@ using eCarbon.Api.Features.Companies.DeleteCompany;
 using eCarbon.Api.Features.Facilities.CreateFacility;
 using eCarbon.Api.Features.Facilities.GetFacility;
 using eCarbon.Api.Features.Facilities.ListFacilitiesByCompany;
+using eCarbon.Api.Features.Facilities.ListAllFacilities;
 using eCarbon.Api.Features.Facilities.UpdateFacility;
 using FluentValidation;
 using MediatR;
@@ -82,6 +83,7 @@ app.MapDeleteCompany();
 // Map Facility endpoints
 app.MapCreateFacility();
 app.MapGetFacility();
+app.MapListAllFacilities();
 app.MapListFacilitiesByCompany();
 app.MapUpdateFacility();
 

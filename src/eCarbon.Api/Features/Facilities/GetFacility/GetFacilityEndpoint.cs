@@ -15,7 +15,8 @@ public static class GetFacilityEndpoint
             var result = await mediator.Send(query, ct);
             return Results.Ok(result);
         })
-        .WithName("GetFacility");
+        .WithName("GetFacility")
+        .WithTags("Facilities");
 
         return app;
     }

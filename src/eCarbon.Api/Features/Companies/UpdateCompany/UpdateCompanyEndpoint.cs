@@ -16,7 +16,8 @@ public static class UpdateCompanyEndpoint
             var result = await mediator.Send(command, ct);
             return Results.Ok(result);
         })
-        .WithName("UpdateCompany");
+        .WithName("UpdateCompany")
+        .WithTags("Companies");
 
         return app;
     }
