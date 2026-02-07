@@ -6,6 +6,10 @@ using eCarbon.Api.Features.Companies.GetCompany;
 using eCarbon.Api.Features.Companies.ListCompanies;
 using eCarbon.Api.Features.Companies.UpdateCompany;
 using eCarbon.Api.Features.Companies.DeleteCompany;
+using eCarbon.Api.Features.Facilities.CreateFacility;
+using eCarbon.Api.Features.Facilities.GetFacility;
+using eCarbon.Api.Features.Facilities.ListFacilitiesByCompany;
+using eCarbon.Api.Features.Facilities.UpdateFacility;
 using FluentValidation;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -68,12 +72,18 @@ using (var scope = app.Services.CreateScope())
     dbContext.Database.Migrate();
 }
 
-// Map endpoints
+// Map Company endpoints
 app.MapCreateCompany();
 app.MapGetCompany();
 app.MapListCompanies();
 app.MapUpdateCompany();
 app.MapDeleteCompany();
+
+// Map Facility endpoints
+app.MapCreateFacility();
+app.MapGetFacility();
+app.MapListFacilitiesByCompany();
+app.MapUpdateFacility();
 
 app.MapGet("/", () => Results.Ok(new { message = "eCarbon API is running", version = "1.0" }));
 
