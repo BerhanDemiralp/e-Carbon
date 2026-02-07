@@ -35,6 +35,10 @@ public class PreviewMonthlyEmissionsHandler : IRequestHandler<PreviewMonthlyEmis
 
         var monthEnd = monthStart.AddMonths(1).AddDays(-1);
 
+        // Ensure UTC for PostgreSQL
+        monthStart = DateTime.SpecifyKind(monthStart, DateTimeKind.Utc);
+        monthEnd = DateTime.SpecifyKind(monthEnd, DateTimeKind.Utc);
+
         // Get all facilities for this company
         var facilityIds = await _dbContext.Facilities
             .Where(f => f.CompanyId == request.CompanyId)
