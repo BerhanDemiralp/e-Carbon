@@ -21,6 +21,11 @@ using eCarbon.Api.Features.Calculations.PreviewMonthlyEmissions;
 using eCarbon.Api.Features.Snapshots.CreateSnapshot;
 using eCarbon.Api.Features.Snapshots.GetSnapshot;
 using eCarbon.Api.Features.Snapshots.FreezeSnapshot;
+using eCarbon.Api.Features.Snapshots.ListSnapshots;
+using eCarbon.Api.Features.Reports.GenerateReport;
+using eCarbon.Api.Features.Reports.DownloadReport;
+using eCarbon.Api.Features.Reports.VerifyReport;
+using eCarbon.Api.Features.Reports.ListReports;
 using FluentValidation;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -114,6 +119,13 @@ app.MapPreviewMonthlyEmissions();
 app.MapCreateSnapshot();
 app.MapGetSnapshot();
 app.MapFreezeSnapshot();
+app.MapListSnapshots();
+
+// Map Report endpoints
+app.MapGenerateReport();
+app.MapDownloadReport();
+app.MapVerifyReport();
+app.MapListReports();
 
 app.MapGet("/", () => Results.Ok(new { message = "eCarbon API is running", version = "1.0" }));
 

@@ -30,8 +30,8 @@ logs/
 *.db
 *.db-journal
 
-# Reports (PDFs)
-reports/
+# Generated Reports (PDFs)
+/GeneratedReports/
 *.pdf
 
 # NuGet
