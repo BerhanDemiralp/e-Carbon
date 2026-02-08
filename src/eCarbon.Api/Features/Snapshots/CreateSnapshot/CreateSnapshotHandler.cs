@@ -39,6 +39,13 @@ public class CreateSnapshotHandler : IRequestHandler<CreateSnapshotCommand, Crea
         monthStart = DateTime.SpecifyKind(monthStart, DateTimeKind.Utc);
         var monthEnd = DateTime.SpecifyKind(monthStart.AddMonths(1).AddDays(-1), DateTimeKind.Utc);
 
+        // Validate month is not in the future
+        var today = DateTime.UtcNow;
+        if (monthStart > new DateTime(today.Year, today.Month, 1, 0, 0, 0, DateTimeKind.Utc))
+        {
+            throw new InvalidOperationException("Cannot create snapshot for a future month.");
+        }
+
         // Check if snapshot already exists for this company and month
         var existingSnapshot = await _dbContext.MonthlySnapshots
             .FirstOrDefaultAsync(s => s.CompanyId == request.CompanyId && s.Month == request.Month, cancellationToken);

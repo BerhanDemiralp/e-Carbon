@@ -26,6 +26,7 @@ using eCarbon.Api.Features.Reports.GenerateReport;
 using eCarbon.Api.Features.Reports.DownloadReport;
 using eCarbon.Api.Features.Reports.VerifyReport;
 using eCarbon.Api.Features.Reports.ListReports;
+using eCarbon.Api.Features.AuditLogs.ListAuditLogs;
 using FluentValidation;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -126,6 +127,9 @@ app.MapGenerateReport();
 app.MapDownloadReport();
 app.MapVerifyReport();
 app.MapListReports();
+
+// Map Audit Log endpoints
+app.MapListAuditLogs();
 
 app.MapGet("/", () => Results.Ok(new { message = "eCarbon API is running", version = "1.0" }));
 
