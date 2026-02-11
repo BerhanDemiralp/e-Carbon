@@ -37,11 +37,16 @@ public class CreateActivityRecordHandler : IRequestHandler<CreateActivityRecordC
             throw new EmissionFactorNotFoundException(request.ActivityType.ToString(), request.Unit);
         }
 
+        // Ensure ActivityDate is UTC to prevent PostgreSQL timestamp error
+        var activityDate = request.ActivityDate.Kind == DateTimeKind.Unspecified
+            ? DateTime.SpecifyKind(request.ActivityDate, DateTimeKind.Utc)
+            : request.ActivityDate.ToUniversalTime();
+
         var activityRecord = new ActivityRecord
         {
             Id = Guid.NewGuid(),
             FacilityId = request.FacilityId,
-            ActivityDate = request.ActivityDate,
+            ActivityDate = activityDate,
             Scope = request.Scope,
             ActivityType = request.ActivityType,
             Quantity = request.Quantity,

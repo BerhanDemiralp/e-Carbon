@@ -17,8 +17,7 @@ public static class CreateActivityRecordEndpoint
             return Results.Created($"/api/activity-records/{result.Id}", result);
         })
         .WithName("CreateActivityRecord")
-        .WithTags("Activity Records")
-        .Accepts<CreateActivityRecordRequest>("application/json");
+        .WithTags("Activity Records");
 
         return app;
     }

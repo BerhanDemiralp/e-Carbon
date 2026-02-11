@@ -59,8 +59,8 @@ public class ErrorHandlingMiddleware
                 code = HttpStatusCode.Unauthorized;
                 result = JsonSerializer.Serialize(new { error = "Unauthorized access" });
                 break;
-            default:
-                result = JsonSerializer.Serialize(new { error = "An unexpected error occurred." });
+default:
+                result = JsonSerializer.Serialize(new { error = "An unexpected error occurred.", type = exception.GetType().Name, message = exception.Message });
                 break;
         }
 
